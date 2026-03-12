@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 1.5.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -8,9 +9,5 @@ terraform {
 }
 
 provider "aws" {
-  # alias      = "mumbai"
-  region     = "ap-south-1"
-  access_key = ""
-  secret_key = ""
+  region = var.aws_region
 }
-
