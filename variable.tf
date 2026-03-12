@@ -1,37 +1,34 @@
-variable "vpc_cidr_block" {
+variable "aws_region" {
   type        = string
-  description = "VPC CIDR Block"
-  default     = "192.168.1.0/24"
-}
-
-variable "instance_tenancy" {
-  type        = string
-  description = "Instance tenancy option for vpc"
-  default     = "default"
-}
-
-variable "aws_ebs_size" {
-  type = number
-  description = "Size of the EBS volume in GB" 
-  default = 40
-  
-}
-
-variable "aws_ebs_availability_zone" {
-  type = string
-  description = "Availability zone for the EBS volume"
-  default = "ap-south-1a"
-  
+  description = "AWS region"
+  default     = "ap-south-1"
 }
 
 variable "vpc_id" {
-  type = string
-  description = "The ID of the VPC"
-  default = "vpc-0f28bbd7869d136e8"
-  
-}
-variable "subnet_cidr_block" {
   type        = string
-  description = "Subnet CIDR Block"
-  default     = "10/0.1.0/25"
+  description = "Existing VPC ID"
+}
+
+variable "subnet_id" {
+  type        = string
+  description = "Existing subnet ID"
+}
+
+variable "key_pair_name" {
+  type        = string
+  description = "Existing EC2 keypair name"
+}
+
+# 2 instances: different sizes
+variable "instance_types" {
+  type        = list(string)
+  description = "Instance types for 2 EC2"
+  default     = ["t3.micro", "t3.small"]
+}
+
+# 2 instances: different root disk sizes
+variable "disk_sizes" {
+  type        = list(number)
+  description = "Root disk sizes for 2 EC2 (GB)"
+  default     = [30, 50]
 }
