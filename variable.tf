@@ -7,16 +7,19 @@ variable "aws_region" {
 variable "vpc_id" {
   type        = string
   description = "Existing VPC ID"
+  default = "vpc-0f28bbd7869d136e8"
 }
 
 variable "subnet_id" {
   type        = string
   description = "Existing subnet ID"
+  default = ""subnet-0741dcbabdaa29bc8"
 }
 
 variable "key_pair_name" {
   type        = string
   description = "Existing EC2 keypair name"
+  default = "ubuntu"
 }
 
 # 2 instances: different sizes
