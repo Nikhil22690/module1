@@ -27,7 +27,7 @@ variable "aws_ebs_availability_zone" {
 variable "vpc_id" {
   type = string
   description = "The ID of the VPC"
-  default = "vpc-0bb1c79de3EXAMPLE"
+  default = "vpc-0f28bbd7869d136e8"
   
 }
 variable "subnet_cidr_block" {
