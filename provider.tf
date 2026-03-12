@@ -14,18 +14,3 @@ provider "aws" {
   secret_key = ""
 }
 
-provider "aws" {
-  alias      = "virginia"
-  region     = "us-east-1"
-  access_key = ""
-  secret_key = ""
-}
-
-terraform {
-  backend "s3" {
-    bucket = "terraform-nikhil-123"
-    key    = "india/terraform.tfstate"
-    region = "ap-south-1"
-    
-  }
-}
